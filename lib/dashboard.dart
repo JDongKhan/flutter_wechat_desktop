@@ -9,7 +9,7 @@ import 'web/web_page.dart';
 
 class DashboardPage extends StatefulWidget {
   DashboardPage({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -33,7 +33,7 @@ class _DashboardPageState extends State<DashboardPage> {
           LeftMenuPage(
             onItemChanged: (String tag) {
               setState(() {
-                mainWidget = map[tag](context);
+                mainWidget = map[tag]!.call(context);
               });
             },
           ),

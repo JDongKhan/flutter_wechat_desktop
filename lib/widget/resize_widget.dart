@@ -25,31 +25,30 @@ class ResizeWidget extends StatefulWidget {
     this.rightBorder,
     this.bottomBorder,
     this.leftBorder,
-    @required this.child,
+    required this.child,
   });
   final Widget child;
-  final double width;
-  final double minWidth;
-  final double maxWidth;
-  final double height;
-  final double minHeight;
-  final double maxHeight;
-  final Widget topBorder;
-  final Widget rightBorder;
-  final Widget bottomBorder;
-  final Widget leftBorder;
+  final double? width;
+  final double? minWidth;
+  final double? maxWidth;
+  final double? height;
+  final double? minHeight;
+  final double? maxHeight;
+  final Widget? topBorder;
+  final Widget? rightBorder;
+  final Widget? bottomBorder;
+  final Widget? leftBorder;
   @override
   _ResizeWidgetState createState() => _ResizeWidgetState();
 }
 
 class _ResizeWidgetState extends State<ResizeWidget> {
-  bool _enter = false;
-  double _width;
-  double _height;
-  double _minWidth;
-  double _maxWidth;
-  double _minHeight;
-  double _maxHeight;
+  double? _width;
+  double? _height;
+  double? _minWidth;
+  double? _maxWidth;
+  double? _minHeight;
+  double? _maxHeight;
 
   @override
   void initState() {
@@ -99,36 +98,36 @@ class _ResizeWidgetState extends State<ResizeWidget> {
         : column;
   }
 
-  Widget _gesrueDetectorWidget(Widget child, ResizeBorder border) {
+  Widget _gesrueDetectorWidget(Widget? child, ResizeBorder border) {
     return GestureDetector(
       onPanUpdate: (DragUpdateDetails details) {
         if (border == ResizeBorder.left || border == ResizeBorder.right) {
           double x = details.delta.dx;
-          if (_enter) {
-            _width += x;
-            _width = max(_minWidth, _width);
-            _width = min(_maxWidth, _width);
-            setState(() {});
-          }
+          double nowWidth = _width ?? 0;
+          double nowMinWidth = _minWidth ?? 0;
+          double nowMaxWidth = _maxWidth ?? 0;
+          _width = nowWidth + x;
+          _width = max(nowMinWidth, _width ?? 0);
+          _width = min(nowMaxWidth, _width ?? 0);
+          setState(() {});
         } else {
           double y = details.delta.dy;
-          if (_enter) {
-            _height -= y;
-            _height = max(_minHeight, _height);
-            _height = min(_maxHeight, _height);
-            setState(() {});
-          }
+          double nowHeight = _height ?? 0;
+          double nowMinHeight = _minHeight ?? 0;
+          double nowMaxHeight = _maxHeight ?? 0;
+          _height = nowHeight - y;
+          _height = max(nowMinHeight, _height ?? 0);
+          _height = min(nowMaxHeight, _height ?? 0);
+          setState(() {});
         }
       },
       child: MouseRegion(
         cursor: (border == ResizeBorder.left || border == ResizeBorder.right)
             ? SystemMouseCursors.resizeColumn
             : SystemMouseCursors.resizeRow,
-        onEnter: (event) {
-          _enter = true;
-        },
+        onEnter: (event) {},
         onExit: (event) {
-          _enter = false;
+          debugPrint(event.toString());
         },
         child: child,
       ),

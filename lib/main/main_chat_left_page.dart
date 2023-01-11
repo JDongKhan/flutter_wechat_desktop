@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 /// @author jd
 class MainChatLeftPage extends StatefulWidget {
   const MainChatLeftPage({this.onView});
-  final ValueChanged<Map> onView;
+  final ValueChanged<Map>? onView;
   @override
   _MainChatLeftPageState createState() => _MainChatLeftPageState();
 }
@@ -24,7 +24,7 @@ class _MainChatLeftPageState extends State<MainChatLeftPage> {
     rootBundle.loadString('assets/jsons/message_list.json').then((value) {
       setState(() {
         messageList = jsonDecode(value);
-        widget.onView(messageList.first);
+        widget.onView?.call(messageList.first);
       });
     });
     super.initState();
@@ -120,7 +120,7 @@ class _MainChatLeftPageState extends State<MainChatLeftPage> {
           selectedTileColor: Colors.grey.withAlpha(20),
           onTap: () {
             _selectedIndex = idx;
-            widget.onView(item);
+            widget.onView?.call(item);
           },
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(20),

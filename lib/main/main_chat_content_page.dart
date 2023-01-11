@@ -8,7 +8,7 @@ import 'package:flutter_wechat_desktop/widget/resize_widget.dart';
 
 class MainChatContentPage extends StatefulWidget {
   const MainChatContentPage({this.message});
-  final Map message;
+  final Map? message;
   @override
   _MainChatContentPageState createState() => _MainChatContentPageState();
 }
@@ -72,7 +72,7 @@ class _MainChatContentPageState extends State<MainChatContentPage> {
     return Row(
       children: [
         Text(
-          widget.message['title'],
+          widget.message!['title'],
           style: TextStyle(
               color: Colors.black87, fontSize: 16, fontWeight: FontWeight.bold),
         ),
@@ -155,7 +155,7 @@ class _MainChatContentPageState extends State<MainChatContentPage> {
           String image = 'assets/images/user_head_0.png';
           bool from = item['from'] == '0';
           if (from) {
-            image = widget.message['image'];
+            image = widget.message!['image'];
           }
           if (from) {
             return ListTile(

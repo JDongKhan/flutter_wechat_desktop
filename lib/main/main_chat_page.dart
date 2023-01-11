@@ -11,7 +11,7 @@ class MainChatPage extends StatefulWidget {
 }
 
 class _MainChatPageState extends State<MainChatPage> {
-  Map currentShowMessage;
+  Map? currentShowMessage;
 
   @override
   Widget build(BuildContext context) {

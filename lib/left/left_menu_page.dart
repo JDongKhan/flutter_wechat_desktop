@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class LeftMenuPage extends StatefulWidget {
   const LeftMenuPage({this.onItemChanged});
-  final ValueChanged<String> onItemChanged;
+  final ValueChanged<String>? onItemChanged;
   @override
   _LeftMenuPageState createState() => _LeftMenuPageState();
 }
@@ -40,7 +40,7 @@ class _LeftMenuPageState extends State<LeftMenuPage> {
               color: Colors.white,
             ),
             onPressed: () {
-              widget.onItemChanged('chat');
+              widget.onItemChanged?.call('chat');
             },
           ),
           const SizedBox(
@@ -52,7 +52,7 @@ class _LeftMenuPageState extends State<LeftMenuPage> {
               color: Colors.white,
             ),
             onPressed: () {
-              widget.onItemChanged('organization');
+              widget.onItemChanged?.call('organization');
             },
           ),
           const SizedBox(
@@ -64,7 +64,7 @@ class _LeftMenuPageState extends State<LeftMenuPage> {
               color: Colors.white,
             ),
             onPressed: () {
-              widget.onItemChanged('web');
+              widget.onItemChanged?.call('web');
             },
           ),
           Expanded(
