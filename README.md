@@ -2,6 +2,8 @@
 
 桌面版微信，适合企业内部开发桌面版的沟通工具，目前项目只在macos跑过，其他操作系统可自行配置
 
+本项目只有UI没有接通服务
+
 ## Getting Started
 
 ![demo png](1.gif "demo")
