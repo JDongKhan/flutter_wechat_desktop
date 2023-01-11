@@ -1,8 +1,0 @@
-version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
-options: "3d13e4331dc615991cbefdf6d4ada9969db691eabccd39280ef23d017de90860"
-build_start_time: [1673405243, 277511119]
-build_end_time: [1673405250, 88706016]
-inputs:
-  "/Users/sn/Documents/Github/flutter/flutter_wechat_desktop/macos/Flutter/GeneratedPluginRegistrant.swift": [1673405226, 913620233]
-  "/Users/sn/Documents/Github/flutter/flutter_wechat_desktop/macos/Runner/AppDelegate.swift": [1673400870, 234174251]
-  "/Users/sn/Documents/Github/flutter/flutter_wechat_desktop/macos/Runner/MainFlutterWindow.swift": [1673400870, 237719535]
