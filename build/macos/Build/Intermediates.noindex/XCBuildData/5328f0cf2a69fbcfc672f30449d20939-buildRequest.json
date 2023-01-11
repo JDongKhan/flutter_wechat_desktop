@@ -1,0 +1,64 @@
+{
+  "_buildCommand2" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildOnly"
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "18c1723432283e0cc55f10a6dcfd9e02a26d6e580d3222b86d62fb80ec380c14"
+    }
+  ],
+  "containerPath" : "/Users/sn/Documents/Github/flutter/flutter_wechat_desktop/macos/Runner.xcworkspace",
+  "continueBuildingAfterErrors" : false,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "x86_64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx13.1",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "x86_64h",
+        "x86_64"
+      ],
+      "targetArchitecture" : "x86_64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/sn/Documents/Github/flutter/flutter_wechat_desktop/build/macos/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/sn/Documents/Github/flutter/flutter_wechat_desktop/build/macos/Build/Products",
+      "derivedDataPath" : "/Users/sn/Documents/Github/flutter/flutter_wechat_desktop/build/macos",
+      "indexDataStoreFolderPath" : "/Users/sn/Documents/Github/flutter/flutter_wechat_desktop/build/macos/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/sn/Documents/Github/flutter/flutter_wechat_desktop/build/macos/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/sn/Documents/Github/flutter/flutter_wechat_desktop/build/macos/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "commandLine" : {
+        "table" : {
+          "COMPILER_INDEX_STORE_ENABLE" : "NO",
+          "OBJROOT" : "/Users/sn/Documents/Github/flutter/flutter_wechat_desktop/build/macos/Build/Intermediates.noindex",
+          "SYMROOT" : "/Users/sn/Documents/Github/flutter/flutter_wechat_desktop/build/macos/Build/Products"
+        }
+      },
+      "synthesized" : {
+        "table" : {
+          "ACTION" : "build",
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

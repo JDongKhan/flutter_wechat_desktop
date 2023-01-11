@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wechat_desktop/main/main_chat_content_page.dart';
+import 'package:flutter_wechat_desktop/main/main_chat_group_content_page.dart';
 import 'package:flutter_wechat_desktop/main/main_chat_left_page.dart';
 import 'package:flutter_wechat_desktop/widget/resize_widget.dart';
 
@@ -11,7 +12,7 @@ class MainChatPage extends StatefulWidget {
 }
 
 class _MainChatPageState extends State<MainChatPage> {
-  Map? currentShowMessage;
+  Map? _currentShowMessage;
 
   @override
   Widget build(BuildContext context) {
@@ -29,18 +30,31 @@ class _MainChatPageState extends State<MainChatPage> {
             child: MainChatLeftPage(
               onView: (Map item) {
                 setState(() {
-                  currentShowMessage = item;
+                  _currentShowMessage = item;
                 });
               },
             ),
           ),
           Expanded(
-            child: MainChatContentPage(
-              message: currentShowMessage,
-            ),
+            child: _buildContentPage(),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildContentPage() {
+    if (_currentShowMessage == null) {
+      return Container();
+    }
+    bool group = _currentShowMessage!["group"] ?? false;
+    if (group) {
+      return MainChatGroupContentPage(
+        message: _currentShowMessage,
+      );
+    }
+    return MainChatContentPage(
+      message: _currentShowMessage,
     );
   }
 }

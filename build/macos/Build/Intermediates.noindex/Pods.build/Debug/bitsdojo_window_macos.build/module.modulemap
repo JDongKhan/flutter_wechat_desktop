@@ -1,0 +1,11 @@
+framework module bitsdojo_window_macos {
+  umbrella header "bitsdojo_window_macos-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module bitsdojo_window_macos.Swift {
+  header "bitsdojo_window_macos-Swift.h"
+  requires objc
+}

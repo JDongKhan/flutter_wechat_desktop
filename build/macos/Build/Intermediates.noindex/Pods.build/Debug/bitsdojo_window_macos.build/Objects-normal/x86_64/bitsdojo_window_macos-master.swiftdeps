@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "1b70326b259433d9f7cc603da4d966f6c4a7f359d6b2598440602efde19bd314"
+build_start_time: [1673404786, 61931133]
+build_end_time: [1673404805, 848721027]
+inputs:
+  "/Users/sn/.pub-cache/hosted/pub.flutter-io.cn/bitsdojo_window_macos-0.1.3/macos/Classes/BitsdojoWindow.swift": [1673401283, 317509174]
+  "/Users/sn/.pub-cache/hosted/pub.flutter-io.cn/bitsdojo_window_macos-0.1.3/macos/Classes/BitsdojoWindowPlugin.swift": [1673401283, 274125576]

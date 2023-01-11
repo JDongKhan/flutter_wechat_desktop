@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MoveWindow(
+        onDoubleTap: () {},
         child: DashboardPage(),
       ),
     );

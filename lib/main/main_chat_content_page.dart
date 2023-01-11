@@ -6,6 +6,7 @@ import 'package:flutter_wechat_desktop/widget/resize_widget.dart';
 
 /// @author jd
 
+///单人聊天
 class MainChatContentPage extends StatefulWidget {
   const MainChatContentPage({this.message});
   final Map? message;
@@ -15,6 +16,8 @@ class MainChatContentPage extends StatefulWidget {
 
 class _MainChatContentPageState extends State<MainChatContentPage> {
   TextEditingController _messageController = TextEditingController();
+
+  final Color _diverColor = const Color(0xFFE0E0E0);
 
   ///消息内容列表
   List messageList = [];
@@ -42,9 +45,9 @@ class _MainChatContentPageState extends State<MainChatContentPage> {
         children: [
           _userInfoWidget(),
           _topMenuWidget(),
-          const Divider(
+          Divider(
             height: 1,
-            color: Colors.grey,
+            color: _diverColor,
           ),
           Expanded(
             child: _messageListWidget(),
@@ -54,13 +57,10 @@ class _MainChatContentPageState extends State<MainChatContentPage> {
             minHeight: 150,
             maxHeight: 500,
             child: _bottomInputWidget(),
-            topBorder: const Divider(
+            topBorder: Divider(
               height: 1,
-              color: Colors.grey,
+              color: _diverColor,
             ),
-          ),
-          const SizedBox(
-            height: 10,
           ),
         ],
       ),
@@ -71,6 +71,9 @@ class _MainChatContentPageState extends State<MainChatContentPage> {
   Widget _userInfoWidget() {
     return Row(
       children: [
+        const SizedBox(
+          width: 12,
+        ),
         Text(
           widget.message!['title'],
           style: TextStyle(
@@ -206,13 +209,17 @@ class _MainChatContentPageState extends State<MainChatContentPage> {
   }
 
   Widget _bottomInputWidget() {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        _inputMenuWidget(),
-        _inputWidget(),
-        _sendWidget(),
-      ],
+    return Container(
+      color: Colors.grey.withAlpha(20),
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _inputMenuWidget(),
+          _inputWidget(),
+          _sendWidget(),
+        ],
+      ),
     );
   }
 
